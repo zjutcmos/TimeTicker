@@ -1,4 +1,4 @@
-package com.example.timeticker;
+package com.zjutcmos.timeticker;
 
 import android.content.Context;
 import android.graphics.Canvas;

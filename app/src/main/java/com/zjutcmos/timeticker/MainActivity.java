@@ -1,10 +1,12 @@
-package com.example.timeticker;
+package com.zjutcmos.timeticker;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, MyClockView.DownCountTimerListener {
     Button mBtn;
@@ -14,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.clock_view_activity);
-        mBtn = (Button) findViewById(R.id.button1);
+        mBtn= (Button) findViewById(R.id.button);
         mBtn.setOnClickListener(this);
         myClockView = (MyClockView) findViewById(R.id.clockView);
         myClockView.setDownCountTimerListener(this);
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.button1:
+            case R.id.button:
                 myClockView.setDownCountTime(1000L * 60L + 1000L * 12L);
                 myClockView.startDownCountTimer();
 
