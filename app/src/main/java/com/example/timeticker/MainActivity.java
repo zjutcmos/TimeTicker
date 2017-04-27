@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBtn.setOnClickListener(this);
         myClockView = (MyClockView) findViewById(R.id.clockView);
         myClockView.setDownCountTimerListener(this);
+     //   Log.e("硬件加速----",myClockView.isHardwareAccelerated()+"");
+         myClockView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
     }
 
     @Override

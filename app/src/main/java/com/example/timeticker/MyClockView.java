@@ -90,10 +90,10 @@ public class MyClockView extends RelativeLayout {
 		hTextView.setTextColor(Color.parseColor("#ffffff"));
 		mTextView.setTextColor(Color.parseColor("#ffffff"));
 		sTextView.setTextColor(Color.parseColor("#ffffff"));
-		dTextView.setTextSize(11f);
-		hTextView.setTextSize(11f);
-		mTextView.setTextSize(11f);
-		sTextView.setTextSize(11f);
+		dTextView.setTextSize(10f);
+		hTextView.setTextSize(10f);
+		mTextView.setTextSize(10f);
+		sTextView.setTextSize(10f);
 
 		dayTextView.setClockBackground(dayTextBg);
 		dayTextView.setClockTextSize(dayTextSize);
@@ -110,9 +110,8 @@ public class MyClockView extends RelativeLayout {
 		//secTextView.setFlipDirection(false);
 
 		Log.e("---->","屏幕的宽"+screenW);
-        int viewWidth=(int)(screenW*0.15);
+        int viewWidth=(int)(screenW*0.14);
 		int viewMargin=(int)(screenW*0.05);
-		int leftRightMargin=(int)(screenW*0.03);
 		dTextView.setWidth(viewWidth);
 		dTextView.setGravity(Gravity.CENTER);
 		hTextView.setWidth(viewWidth);
@@ -125,7 +124,7 @@ public class MyClockView extends RelativeLayout {
 		dayLayoutParams = new LayoutParams(viewWidth,
                 viewWidth);
 		dayLayoutParams.addRule(RelativeLayout.ALIGN_PARENT_LEFT, TRUE);
-		dayLayoutParams.setMargins(leftRightMargin, 60, 0, 0);
+		dayLayoutParams.setMargins(0, 60, 0, 0);
 		addView(dayTextView, dayLayoutParams);
 		LayoutParams dLayoutParams = new LayoutParams(
 				ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -152,8 +151,6 @@ public class MyClockView extends RelativeLayout {
 				viewWidth);
 		minLayoutParams.setMargins(0, 60, 0, 0);
 		minLayoutParams.addRule(RelativeLayout.RIGHT_OF, R.id.hourTextView);
-		minLayoutParams.addRule(RelativeLayout.ALIGN_BASELINE,
-				R.id.hourTextView);
 		addView(minTextView, minLayoutParams);
 		LayoutParams mLayoutParams = new LayoutParams(
 				ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -166,11 +163,10 @@ public class MyClockView extends RelativeLayout {
 		secLayoutParams = new LayoutParams(viewWidth,
                 viewWidth);
 		secLayoutParams.addRule(RelativeLayout.RIGHT_OF, R.id.minTextView);
-		secLayoutParams.setMargins(viewMargin, 60, leftRightMargin, 0);
+		secLayoutParams.setMargins(viewMargin, 60, 0, 0);
 		addView(secTextView, secLayoutParams);
 		LayoutParams sLayoutParams = new LayoutParams(
 				ViewGroup.LayoutParams.WRAP_CONTENT,
-				
 				ViewGroup.LayoutParams.WRAP_CONTENT);
 		sLayoutParams.addRule(RelativeLayout.ALIGN_LEFT, R.id.secTextView);
 		sLayoutParams.addRule(RelativeLayout.BELOW, R.id.secTextView);
@@ -245,7 +241,7 @@ public class MyClockView extends RelativeLayout {
 			@Override
 			public void run() {
 				int i=secTextView.getCurrentValue();
-				//Log.e("sec时间----->",i + "");
+			   // Log.e("sec时间----->",i + "");
 				outNumber--;
 				if (outNumber<=0) {
 					if (i > 0) {
@@ -347,14 +343,16 @@ public class MyClockView extends RelativeLayout {
 			dayTextView.setClockTime("99");
 			hourTextView.setClockTime("23");
 			minTextView.setClockTime("59");
-			secTextView.setClockTime("59");
+			secTextView.getmInvisibleTextView().setText("59");
+			secTextView.getmVisibleTextView().setText("59");
 			outNumber=((startTime)-1000L*60L*60L*24L*100L)/1000L;
-			Log.e("多余的时间----》",outNumber+"");
+		//	Log.e("多余的时间----》",outNumber+"");
 		} else {
 			dayTextView.setClockTime(strDay);
 			hourTextView.setClockTime(strHour);
 			minTextView.setClockTime(strMinute);
-			secTextView.setClockTime(strSecond);
+			secTextView.getmVisibleTextView().setText(strSecond);
+			secTextView.getmInvisibleTextView().setText(strSecond);
 		}
 	}
 

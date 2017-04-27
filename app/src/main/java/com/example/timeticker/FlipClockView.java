@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.View;
-import android.view.animation.DecelerateInterpolator;
+import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.Scroller;
 import android.widget.TextView;
@@ -51,7 +51,7 @@ public class FlipClockView extends FrameLayout {
 	}
 
 	public void init(Context context) {
-		mScroller = new Scroller(context, new DecelerateInterpolator());// 减速 // 动画插入器
+		mScroller = new Scroller(context, new AccelerateInterpolator());// 加速 // 动画插入器
 
 		mInvisibleTextView = new MyTextView(context);
 		mInvisibleTextView.setText("0");
@@ -255,7 +255,7 @@ public class FlipClockView extends FrameLayout {
 		initTextView();
 		isFlipping = true;
 
-		mScroller.startScroll(0, 0, 0, layoutHeight, 700);
+		mScroller.startScroll(0, 0, 0, layoutHeight, 300);
 		postInvalidate();
 	}
 

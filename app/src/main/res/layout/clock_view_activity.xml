@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:customs="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -6,26 +7,17 @@
     android:gravity="center_horizontal"
     android:orientation="vertical" >
 
-    <com.example.timeticker.MyClockView
-        android:id="@+id/clockView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:background="@mipmap/tcd_timer_bg"
-        customs:dayTextBackground="@drawable/time_bg"
-        customs:dayTextColor="#ffffff"
-        customs:hourTextBackground="@drawable/time_bg"
-        customs:hourTextColor="#ffffff"
-        customs:minTextBackground="@drawable/time_bg"
-        customs:minTextColor="#ffffff"
-        customs:secTextBackground="@drawable/time_bg"
-        customs:secTextColor="#ffffff" >
-    </com.example.timeticker.MyClockView>
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="倒计时" />
+            <com.example.timeticker.MyClockView
+                android:id="@+id/clockView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                customs:dayTextBackground="@drawable/time_bg"
+                customs:dayTextColor="#ffffff"
+                customs:hourTextBackground="@drawable/time_bg"
+                customs:hourTextColor="#ffffff"
+                customs:minTextBackground="@drawable/time_bg"
+                customs:minTextColor="#ffffff"
+                customs:secTextBackground="@drawable/time_bg"
+                customs:secTextColor="#ffffff" />
 
 </LinearLayout>
