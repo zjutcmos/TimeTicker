@@ -184,10 +184,14 @@ public class MyClockView extends RelativeLayout {
 	}
 
 	private void  setDefaultBgAndColor(){
-		dayTextView.setBackground(getResources().getDrawable(R.drawable.time_bg));
-		hourTextView.setBackground(getResources().getDrawable(R.drawable.time_bg));
-		minTextView.setBackground(getResources().getDrawable(R.drawable.time_bg));
-		secTextView.setBackground(getResources().getDrawable(R.drawable.time_bg));
+		dayTextView.setClockBackground(getResources().getDrawable(R.drawable.time_bg));
+		hourTextView.setClockBackground(getResources().getDrawable(R.drawable.time_bg));
+		minTextView.setClockBackground(getResources().getDrawable(R.drawable.time_bg));
+		secTextView.setClockBackground(getResources().getDrawable(R.drawable.time_bg));
+		dayTextView.setClockTextColor(Color.parseColor("#ffffff"));
+		hourTextView.setClockTextColor(Color.parseColor("#ffffff"));
+		minTextView.setClockTextColor(Color.parseColor("#ffffff"));
+		secTextView.setClockTextColor(Color.parseColor("#ffffff"));
 	}
 
 	public interface DownCountTimerListener {
