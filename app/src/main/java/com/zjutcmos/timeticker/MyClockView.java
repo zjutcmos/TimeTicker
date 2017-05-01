@@ -181,8 +181,6 @@ public class MyClockView extends RelativeLayout {
 		mHandler = new Handler();
 	}
 
-
-
 	public interface DownCountTimerListener {
 
 		void stopDownCountTimer();
@@ -207,6 +205,10 @@ public class MyClockView extends RelativeLayout {
 		this.mDownCountTimerListener = listener;
 	}
 
+	/**
+	 * 获取设置倒计时的总时间
+	 * @return
+	 */
 	public long getDownCountTime() {
 		return totalTime;
 	}
