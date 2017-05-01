@@ -109,7 +109,7 @@ public class MyClockView extends RelativeLayout {
 		secTextView.setClockTextColor(secTextColor);
 		//secTextView.setFlipDirection(false);
 
-		Log.e("---->","屏幕的宽"+screenW);
+		//Log.e("---->","屏幕的宽"+screenW);
         int viewWidth=(int)(screenW*0.14);
 		int viewMargin=(int)(screenW*0.05);
 		dTextView.setWidth(viewWidth);
@@ -177,8 +177,17 @@ public class MyClockView extends RelativeLayout {
 		hourTextView.setClockTime("00");
 		minTextView.setClockTime("00");
 		secTextView.setClockTime("00");
-
+		if (dayTextBg==null){
+			setDefaultBgAndColor();
+		}
 		mHandler = new Handler();
+	}
+
+	private void  setDefaultBgAndColor(){
+		dayTextView.setBackground(getResources().getDrawable(R.drawable.time_bg));
+		hourTextView.setBackground(getResources().getDrawable(R.drawable.time_bg));
+		minTextView.setBackground(getResources().getDrawable(R.drawable.time_bg));
+		secTextView.setBackground(getResources().getDrawable(R.drawable.time_bg));
 	}
 
 	public interface DownCountTimerListener {
