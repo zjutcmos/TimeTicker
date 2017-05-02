@@ -357,6 +357,7 @@ public class MyClockView extends RelativeLayout {
 			minTextView.setClockTime(strMinute);
 			secTextView.getmVisibleTextView().setText(strSecond);
 			secTextView.getmInvisibleTextView().setText(strSecond);
+			outNumber=0;
 		}
 	}
 
